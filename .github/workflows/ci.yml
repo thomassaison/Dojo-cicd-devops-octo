@@ -3,11 +3,12 @@ name: CI
 
 on: push
 
-
 jobs:
   FunctionTest:
     name: Function Test
     runs-on: ubuntu-latest
+    env:
+      workdir: func-dojo-cicd-skool
     steps:
       - uses: actions/checkout@v2
 
@@ -15,18 +16,16 @@ jobs:
         with:
           node-version: '16.x'
 
-      - name: Go to the directory
-        run: cd ./func-dojo-cicd-skool
-
       - name: npm install
+        working-directory: ${{ env.workdir }}
         run: npm install
 
       - name: npm test:coverage
+        working-directory: ${{ env.workdir }}
         run: npm run test:coverage
 
       - name: Move reports directory
         run: |
-          cd ../
           mkdir -p reports/jest
           mv ./func-dojo-cicd-skool/coverage ./reports/jest/coverage
 
