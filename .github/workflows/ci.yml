@@ -5,7 +5,7 @@ on: push
 
 jobs:
   lint:
-    name: [LINT] es-lint
+    name: es-lint
     runs-on: ubuntu-latest
     env:
       workdir: func-dojo-cicd-skool
