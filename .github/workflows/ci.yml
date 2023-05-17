@@ -4,7 +4,7 @@ name: CI
 on: push
 
 jobs:
-  Lint:
+  lint:
     name: [LINT] es-lint
     runs-on: ubuntu-latest
     env:
@@ -24,7 +24,7 @@ jobs:
         working-directory: ${{ env.workdir }}
         run: npm run lint
 
-  FunctionTest:
+  functionTest:
     name: Function Test
     runs-on: ubuntu-latest
     needs: Lint
