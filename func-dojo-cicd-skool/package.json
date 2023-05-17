@@ -8,6 +8,7 @@
     "prestart": "npm run build",
     "start": "func start",
     "test": "jest ",
+    "test:coverage": "jest --coverage",
     "lint": "eslint './DojoCicdSkool/src/**/*.ts'",
     "lint-fix": "eslint './DojoCicdSkool/src/**/*.{tsx,ts}' --fix",
     "sonar": "sonarqube-verify",
@@ -31,6 +32,7 @@
     "typescript": "5.0.4"
   },
   "dependencies": {
+    "@azure/functions": "^3.5.1",
     "audit-ci": "^6.6.1",
     "eslint-config-prettier": "^8.8.0",
     "jest-cli": "^29.5.0",
@@ -39,6 +41,7 @@
   "jestSonar": {
     "reportPath": "coverage",
     "reportFile": "test-reporter.xml",
+
     "indent": 4
   }
 }
