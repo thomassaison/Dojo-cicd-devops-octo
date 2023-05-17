@@ -29,6 +29,7 @@ const createLogger = (): Logger => {
   logger.error = () => undefined;
   logger.info = () => undefined;
   logger.verbose = () => undefined;
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   logger.warn = () => {};
   return <Logger>logger;
 };

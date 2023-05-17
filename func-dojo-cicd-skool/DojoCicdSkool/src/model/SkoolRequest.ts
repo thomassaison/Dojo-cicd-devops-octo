@@ -4,7 +4,7 @@ export interface SkoolRequest {
   version: string;
 }
 
-export const toSkoolRequest = function (body: any): SkoolRequest {
+export const toSkoolRequest = function (body: unknown): SkoolRequest {
   const { polygramme, description, version } = body;
   return { polygramme, description, version };
 };
